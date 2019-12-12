@@ -7,7 +7,7 @@ class App extends Component {
     {
         return (
             <div className='title'>
-                <img src={dna}></img>
+                <img alt='helix' src={dna}></img>
             </div>
     );
     }
