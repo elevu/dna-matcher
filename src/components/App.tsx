@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import './App.style.css'
 import dna from '../assets/dna.gif'
 
-class App extends Component {
+class App extends React.Component {
     render()
     {
         return (

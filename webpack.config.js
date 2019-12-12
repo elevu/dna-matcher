@@ -8,15 +8,14 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[hash].js'
     },
+    resolve: {
+        // changed from extensions: [".js", ".jsx"]
+        extensions: [".ts", ".tsx", ".js", ".jsx"]
+    },
     module: {
         rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader'
-                }
-            }, {
+            {test: /\.([tj])sx?$/, use: {loader: 'awesome-typescript-loader'}},
+             {
                 test: /\.(png|svg|gif|jpg)$/,
                 exclude: /node_modules/,
                 use: ['file-loader']
