@@ -6,7 +6,7 @@ class App extends Component {
     render()
     {
         return (
-            <div className='title'>Your DNA match here ;D
+            <div className='title'>
                 <img src={dna}></img>
             </div>
     );
