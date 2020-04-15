@@ -23,7 +23,6 @@ const Upload = () => {
     return (
         <div>
             <input type="file" name="0" onChange={setFile}/>
-            <input type="file" name="1" onChange={setFile}/>
             <button onClick={() => submitFiles(file1)}>Submit</button>
         </div>
     )

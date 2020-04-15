@@ -10,7 +10,6 @@ class App extends React.Component {
     {
         return (
             <div className='title'>
-                <img alt='helix' src={dna}/>
                 <Upload />
             </div>
     );
