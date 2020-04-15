@@ -1,13 +1,13 @@
 import * as React from "react"
 import './Upload.style.css'
 import * as firebase from 'firebase'
-import {helloWorld} from "../../../functions/src";
+import {getNutrigenomicsResults} from "../../../functions/src";
 
 
 const submitFiles = (files)=> {
-    var addMessage = firebase.functions().httpsCallable('helloWorld');
+    var addMessage = firebase.functions().httpsCallable('getNutrigenomicsResults');
     addMessage(files).then(function(result) {
-        console.log('Result' + result)
+        console.log(JSON.stringify(result))
     });
 
 };
