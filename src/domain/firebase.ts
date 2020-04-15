@@ -10,5 +10,8 @@ const firebaseConfig = {
 };
 
 export const init = () => {
-    firebase.initializeApp(firebaseConfig)
+    firebase.initializeApp(firebaseConfig);
+    if (process.env.NODE_ENV === 'development') {
+        firebase.functions().useFunctionsEmulator("http://localhost:5000");
+    }
 };
