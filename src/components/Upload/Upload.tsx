@@ -22,9 +22,9 @@ const Upload = () => {
     setShowUpload(false);
     submitFiles(acceptedFiles);
   };
-  if (showUpload) {
-    return (
-      <div className="container">
+  return (
+    <div className="container">
+      {showUpload && (
         <Dropzone
           onDrop={(acceptedFiles) => hideUpload(acceptedFiles)}
           accept=".txt"
@@ -42,12 +42,11 @@ const Upload = () => {
             </section>
           )}
         </Dropzone>
-      </div>
-    );
-  }
-  if (results.length > 0) {
-    return <Results data={results} />;
-  } else return <div>Calculating your results...</div>;
+      )}
+      {results.length > 0 && <Results data={results} />}
+      {results.length < 0 && !showUpload && <Results data={results} />}
+    </div>
+  );
 };
 
 export default Upload;
