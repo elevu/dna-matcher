@@ -44,14 +44,10 @@ const Upload = () => {
         </Dropzone>
       </div>
     );
-  } if (results.length > 0) {
-      return (
-        <Results results={results}/>
-      )
   }
-  else return (
-        <div>Calculating your results...</div>
-  )
+  if (results.length > 0) {
+    return <Results data={results} />;
+  } else return <div>Calculating your results...</div>;
 };
 
 export default Upload;

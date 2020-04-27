@@ -1,14 +1,14 @@
-import * as React from 'react';
+import * as React from "react";
+import SNPcard from "./SNPcard";
 
 const Results = (results) => {
-  console.log(results.results);
-  console.log(results.results.length);
-  const allResults = results.results.map((element) => (
-    <li key={element.name}>Name: {element.name}</li>
+  console.log(results);
+  const allResults = results.data.map((SNP) => (
+    <SNPcard key={SNP.name} data={SNP} />
   ));
   return (
     <div>
-      Here al the results:
+      Results:
       {allResults}
     </div>
   );
