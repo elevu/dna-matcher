@@ -10,11 +10,15 @@ const AppContainer = () => {
   const [results, setResults] = React.useState([]);
 
   const submitFile = (files) => {
+    var allResults: any = [];
     var addMessage = firebase
       .functions()
       .httpsCallable("getNutrigenomicsResults");
-    return addMessage(files).then(function (result) {
-      setResults(result.data);
+    files.map((file) => {
+      return addMessage(file).then(function (result) {
+        allResults.push(...result.data);
+        setResults(allResults);
+      });
     });
   };
 
@@ -25,13 +29,20 @@ const AppContainer = () => {
       reader.onabort = () => console.log("file reading was aborted");
       reader.onerror = () => console.log("file reading has failed");
       reader.onload = () => {
-        //console.log(reader.result);
-        submitFile(reader.result);
+        submitFile(divideIntoSubstrings(reader.result));
         setShowUpload(false);
       };
       reader.readAsText(file);
     });
   }, []);
+
+const divideIntoSubstrings = text => {
+  const textLenght: number = text.length;
+  const textGroup: any = [];
+  textGroup.push(text.substring(0,Math.floor(textLenght/2)));
+  textGroup.push(text.substring(Math.floor(textLenght/2),textLenght));
+  return textGroup;
+}
 
   return (
     <div className="container">
