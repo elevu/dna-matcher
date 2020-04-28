@@ -1,15 +1,15 @@
 import * as React from "react";
-import "./Upload.style.css";
+import "./AppContainer.style.css";
 import * as firebase from "firebase";
 import { getNutrigenomicsResults } from "../../../functions/src";
 import Dropzone from "react-dropzone";
 import Results from "../Results/Results";
 
-const Upload = () => {
+const AppContainer = () => {
   const [showUpload, setShowUpload] = React.useState(true);
   const [results, setResults] = React.useState([]);
 
-  const submitFiles = (files) => {
+  const submitFile = (files) => {
     var addMessage = firebase
       .functions()
       .httpsCallable("getNutrigenomicsResults");
@@ -18,15 +18,26 @@ const Upload = () => {
     });
   };
 
-  const hideUpload = (acceptedFiles) => {
-    setShowUpload(false);
-    submitFiles(acceptedFiles);
-  };
+  const onDrop = React.useCallback((acceptedFiles) => {
+    acceptedFiles.forEach((file) => {
+      const reader = new FileReader();
+
+      reader.onabort = () => console.log("file reading was aborted");
+      reader.onerror = () => console.log("file reading has failed");
+      reader.onload = () => {
+        //console.log(reader.result);
+        submitFile(reader.result);
+        setShowUpload(false);
+      };
+      reader.readAsText(file);
+    });
+  }, []);
+
   return (
     <div className="container">
       {showUpload && (
         <Dropzone
-          onDrop={(acceptedFiles) => hideUpload(acceptedFiles)}
+          onDrop={(acceptedFiles) => onDrop(acceptedFiles)}
           accept=".txt"
           multiple={false}
         >
@@ -44,9 +55,9 @@ const Upload = () => {
         </Dropzone>
       )}
       {results.length > 0 && <Results data={results} />}
-      {results.length < 0 && !showUpload && <Results data={results} />}
+      {results.length < 0 && !showUpload && <div>Loading..</div>}
     </div>
   );
 };
 
-export default Upload;
+export default AppContainer;

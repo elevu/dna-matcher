@@ -1,13 +1,13 @@
 import * as React from 'react';
 import './App.style.css'
-import Upload from '../Upload/Upload';
+import AppContainer from '../AppContainer/AppContainer';
 
 
 const App = () => {
 
     return(
                 <div>
-                    <Upload/>
+                    <AppContainer/>
                 </div>
     );
 }
