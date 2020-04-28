@@ -48,32 +48,34 @@ const AppContainer = () => {
   return (
     <div className="container">
       {showUpload && (
-        <Dropzone
-          onDrop={(acceptedFiles) => onDrop(acceptedFiles)}
-          accept=".txt"
-          multiple={false}
-        >
-          {({ getRootProps, getInputProps }) => (
-            <section>
-              <div {...getRootProps()}>
-                <input {...getInputProps()} />
-                <p>
-                  Drag and drop your 23andme results here. The file should be
-                  unzipped with .txt extension
-                </p>
-              </div>
-            </section>
-          )}
-        </Dropzone>
+        <div>
+          <Dropzone
+            onDrop={(acceptedFiles) => onDrop(acceptedFiles)}
+            accept=".txt"
+            multiple={false}
+          >
+            {({ getRootProps, getInputProps }) => (
+              <section>
+                <div {...getRootProps()}>
+                  <input {...getInputProps()} />
+                  <p>
+                    Drag and drop your 23andme results here. The file should be
+                    unzipped with .txt extension
+                  </p>
+                </div>
+              </section>
+            )}
+          </Dropzone>
+          <a
+            href="https://storage.googleapis.com/dna-match/example_raw_data.txt"
+            download="example_DNA_file.txt"
+          >
+            Download example 23andme file
+          </a>
+        </div>
       )}
       {results.length > 0 && <Results data={results} />}
       {results.length <= 0 && !showUpload && <img src={loadingDNA} />}
-      <a
-        href="https://storage.googleapis.com/dna-match/example_raw_data.txt"
-        download="example_DNA_file.txt"
-      >
-        Download example 23andme file
-      </a>
     </div>
   );
 };

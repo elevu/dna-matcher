@@ -2,10 +2,10 @@ import * as React from "react";
 
 const SNPcard = (snp) => {
   return <p>
-    <li>Name: {snp.data.name}</li>
-    <li>Base: {snp.data.bases}</li>
-    <li>Type: {snp.data.type}</li>
-    <li>Description: {snp.data.description}</li>
+    <div>Name: {snp.data.name}</div>
+    <div>Base: {snp.data.bases}</div>
+    <div>Type: {snp.data.type}</div>
+    <div>Description: {snp.data.description}</div>
   </p>;
 };
 
