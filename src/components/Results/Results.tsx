@@ -8,7 +8,6 @@ const Results = (results) => {
   ));
   return (
     <div>
-      Results:
       {allResults}
     </div>
   );

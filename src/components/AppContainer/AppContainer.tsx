@@ -4,6 +4,7 @@ import * as firebase from "firebase";
 import { getNutrigenomicsResults } from "../../../functions/src";
 import Dropzone from "react-dropzone";
 import Results from "../Results/Results";
+import loadingDNA from "../../assets/loadingDNA.gif";
 
 const AppContainer = () => {
   const [showUpload, setShowUpload] = React.useState(true);
@@ -36,13 +37,13 @@ const AppContainer = () => {
     });
   }, []);
 
-const divideIntoSubstrings = text => {
-  const textLenght: number = text.length;
-  const textGroup: any = [];
-  textGroup.push(text.substring(0,Math.floor(textLenght/2)));
-  textGroup.push(text.substring(Math.floor(textLenght/2),textLenght));
-  return textGroup;
-}
+  const divideIntoSubstrings = (text) => {
+    const textLenght: number = text.length;
+    const textGroup: any = [];
+    textGroup.push(text.substring(0, Math.floor(textLenght / 2)));
+    textGroup.push(text.substring(Math.floor(textLenght / 2), textLenght));
+    return textGroup;
+  };
 
   return (
     <div className="container">
@@ -66,7 +67,13 @@ const divideIntoSubstrings = text => {
         </Dropzone>
       )}
       {results.length > 0 && <Results data={results} />}
-      {results.length < 0 && !showUpload && <div>Loading..</div>}
+      {results.length <= 0 && !showUpload && <img src={loadingDNA} />}
+      <a
+        href="https://storage.googleapis.com/dna-match/example_raw_data.txt"
+        download="example_DNA_file.txt"
+      >
+        Download example 23andme file
+      </a>
     </div>
   );
 };
