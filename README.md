@@ -30,5 +30,3 @@ npm install
 ### TODO
 
 - [ ] Add more SNPs to the list
-- [ ] Add unit tests
-- [ ] Type everything
