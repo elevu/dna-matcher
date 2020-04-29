@@ -70,7 +70,7 @@ const AppContainer = () => {
             href="https://storage.googleapis.com/dna-match/example_raw_data.txt"
             download="example_DNA_file.txt"
           >
-            Download example 23andme file
+            Example 23andme file
           </a>
         </div>
       )}
