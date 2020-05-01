@@ -18,10 +18,12 @@ const AppContainer = () => {
     files.map((file) => {
       return addMessage(file).then(function (result) {
         allResults.push(...result.data);
-        setResults(allResults);
+        let tempArray: any = ([...allResults])
+        setResults(tempArray);
       });
     });
   };
+
 
   const onDrop = React.useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
@@ -44,6 +46,8 @@ const AppContainer = () => {
     textGroup.push(text.substring(Math.floor(textLenght / 2), textLenght));
     return textGroup;
   };
+
+  console.log(JSON.stringify(results));
 
   return (
     <div className="container">
@@ -74,7 +78,7 @@ const AppContainer = () => {
           </a>
         </div>
       )}
-      {results.length > 0 && <Results data={results} />}
+      {results.length > 0 && <Results data={...results} />}
       {results.length <= 0 && !showUpload && <img src={loadingDNA} />}
     </div>
   );
