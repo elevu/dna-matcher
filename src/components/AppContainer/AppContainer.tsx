@@ -18,12 +18,11 @@ const AppContainer = () => {
     files.map((file) => {
       return addMessage(file).then(function (result) {
         allResults.push(...result.data);
-        let tempArray: any = ([...allResults])
+        let tempArray: any = [...allResults];
         setResults(tempArray);
       });
     });
   };
-
 
   const onDrop = React.useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
@@ -40,12 +39,25 @@ const AppContainer = () => {
   }, []);
 
   const loadSampleFile = () => {
-    fetch('https://storage.googleapis.com/dna-match/example_raw_data.txt').then(res => console.log(res))
-  }
+    fetch(
+      "https://storage.googleapis.com/dna-match/raw_data.txt"
+    ).then((res) =>
+      res
+        .blob()
+        .then((blob) =>
+          blob.text().then((aText) => {
+            submitFile(divideIntoSubstrings(aText))
+            setShowUpload(false);
+          })
+        )
+    );
+  
+  };
 
   const divideIntoSubstrings = (text) => {
     const textLenght: number = text.length;
     const textGroup: any = [];
+    console.log(text);
     textGroup.push(text.substring(0, Math.floor(textLenght / 2)));
     textGroup.push(text.substring(Math.floor(textLenght / 2), textLenght));
     return textGroup;
@@ -74,11 +86,7 @@ const AppContainer = () => {
               </section>
             )}
           </Dropzone>
-          <button
-            onClick={loadSampleFile}
-          >
-            Load sample 23andme file
-          </button>
+          <button onClick={loadSampleFile}>Load sample 23andme file</button>
         </div>
       )}
       {results.length > 0 && <Results data={...results} />}
