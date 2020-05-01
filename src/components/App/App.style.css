@@ -1,4 +1,10 @@
 html {
-    background: white center;
-    background-size: cover;
+  background: center;
+  background-image: linear-gradient(#f1e1a3, rgb(233, 232, 232));
+  height: 100%;
+}
+
+img {
+  width: 10%;
+  height: 10%;
 }

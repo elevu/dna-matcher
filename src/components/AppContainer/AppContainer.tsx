@@ -39,6 +39,10 @@ const AppContainer = () => {
     });
   }, []);
 
+  const loadSampleFile = () => {
+    fetch('https://storage.googleapis.com/dna-match/example_raw_data.txt').then(res => console.log(res))
+  }
+
   const divideIntoSubstrings = (text) => {
     const textLenght: number = text.length;
     const textGroup: any = [];
@@ -70,12 +74,11 @@ const AppContainer = () => {
               </section>
             )}
           </Dropzone>
-          <a
-            href="https://storage.googleapis.com/dna-match/example_raw_data.txt"
-            download="example_DNA_file.txt"
+          <button
+            onClick={loadSampleFile}
           >
-            Example 23andme file
-          </a>
+            Load sample 23andme file
+          </button>
         </div>
       )}
       {results.length > 0 && <Results data={...results} />}
