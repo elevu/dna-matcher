@@ -1,10 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
 html {
-  background: center;
-  background-image: linear-gradient(white,rgb(176, 206, 192));
-  height: 100%;
+  font-weight: 700;
+  color: rgb(107, 107, 107);
+  font-family: "Noto Sans", sans-serif;
 }
 
 img {
-  width: 10%;
-  height: 10%;
+  height: 70px;
+  padding: 10px;
+}
+
+.grids {
+  display: grid;
+  grid-template-columns: 40px 50px auto 50px 40px;
+  grid-template-rows: 100px 300px 55% 20px;
+}
+
+.appContainer {
+  grid-column-start: 1;
+  grid-column-end: five;
+  grid-row-start: 3;
+  background-image: linear-gradient(
+    45deg,
+    rgb(95, 92, 177) 0%,
+    rgb(147, 54, 212) 100%
+  );
+}
+
+.header {
+  grid-column-start: 1;
+  grid-column-end: end;
+  grid-row-start: 1;
+  background: rgb(247, 249, 250);
+  border-bottom: 1px solid rgb(212, 214, 214);
+}
+
+.headerImage {
+  grid-column-start: 1;
+  grid-column-end: end;
+  grid-row-start: 2;
+  background-image: url("../../assets/header-background.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: 25% 25% 25% 25%;
+  color: white;
+  font-size: 40px;
+}
+
+.headerText1 {
+  padding: 20px;
+  grid-column: 1 / 4;
+  grid-row: 1;
+}
+.headerSubtitle1 {
+  font-size: 20px;
+  padding: 23px;
+  grid-column: 1 / 4;
+  grid-row: 2 / 4;
+}
+
+.headerText2 {
+  padding: 20px;
+  grid-column: 9 / end;
+  grid-row: 1;
+}
+.headerSubtitle2 {
+  font-size: 20px;
+  padding: 23px;
+  grid-column: 9 / end;
+  grid-row: 2 / 4;
+}
+
+@media screen and (max-width: 1200px) {
+  .headerSubtitle1 {
+    display: none;
+  }
+  .headerSubtitle2 {
+    display: none;
+  }
+}
+
+.footer {
+  grid-column-start: 1;
+  grid-column-end: end;
+  grid-row-start: 4;
+  background: rgb(247, 249, 250);
+  font-size: xx-small;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

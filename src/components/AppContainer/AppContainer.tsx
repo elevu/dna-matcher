@@ -5,6 +5,9 @@ import { getNutrigenomicsResults } from "../../../functions/src";
 import Dropzone from "react-dropzone";
 import Results from "../Results/Results";
 import loadingDNA from "../../assets/loadingDNA.gif";
+import AndmeLogo from "../../assets/23andmelogo.svg";
+import LivingDNALogo from "../../assets/livingDNAlogo.png";
+
 
 const AppContainer = () => {
   const [showUpload, setShowUpload] = React.useState(true);
@@ -39,19 +42,14 @@ const AppContainer = () => {
   }, []);
 
   const loadSampleFile = () => {
-    fetch(
-      "https://storage.googleapis.com/dna-match/raw_data.txt"
-    ).then((res) =>
-      res
-        .blob()
-        .then((blob) =>
-          blob.text().then((aText) => {
-            submitFile(divideIntoSubstrings(aText))
-            setShowUpload(false);
-          })
-        )
+    fetch("https://storage.googleapis.com/dna-match/raw_data.txt").then((res) =>
+      res.blob().then((blob) =>
+        blob.text().then((aText) => {
+          submitFile(divideIntoSubstrings(aText));
+          setShowUpload(false);
+        })
+      )
     );
-  
   };
 
   const divideIntoSubstrings = (text) => {
@@ -63,12 +61,15 @@ const AppContainer = () => {
     return textGroup;
   };
 
-  console.log(JSON.stringify(results));
-
   return (
     <div className="container">
       {showUpload && (
         <div>
+          <div className="supportText">Supporting raw data files from</div>
+          <div className="supportImages">
+            <img src={AndmeLogo}></img>
+            <img src={LivingDNALogo}></img>
+          </div>
           <Dropzone
             onDrop={(acceptedFiles) => onDrop(acceptedFiles)}
             accept=".txt"
@@ -86,7 +87,9 @@ const AppContainer = () => {
               </section>
             )}
           </Dropzone>
-          <button onClick={loadSampleFile}>Load sample 23andme file</button>
+          <button onClick={loadSampleFile}>
+            ... or try out with sample data
+          </button>
         </div>
       )}
       {results.length > 0 && <Results data={...results} />}
