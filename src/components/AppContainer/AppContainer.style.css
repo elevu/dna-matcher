@@ -37,3 +37,11 @@ button:hover {
   background: white;
   color: rgb(95, 92, 177);
 }
+
+.loadingAnimation div {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-image: url('../../assets/dna-match-logo.png');
+}

@@ -7,10 +7,11 @@ import Results from "../Results/Results";
 import loadingDNA from "../../assets/loadingDNA.gif";
 import AndmeLogo from "../../assets/23andmelogo.svg";
 import LivingDNALogo from "../../assets/livingDNAlogo.png";
-
+import { motion } from "framer-motion";
 
 const AppContainer = () => {
   const [showUpload, setShowUpload] = React.useState(true);
+  const [showLoading, setShowLoading] = React.useState(true);
   const [results, setResults] = React.useState([]);
 
   const submitFile = (files) => {
@@ -36,6 +37,7 @@ const AppContainer = () => {
       reader.onload = () => {
         submitFile(divideIntoSubstrings(reader.result));
         setShowUpload(false);
+        loadingTime;
       };
       reader.readAsText(file);
     });
@@ -60,6 +62,10 @@ const AppContainer = () => {
     textGroup.push(text.substring(Math.floor(textLenght / 2), textLenght));
     return textGroup;
   };
+
+  const loadingTime = setTimeout(() => {
+    if (results.length <= 0) setShowLoading(false);
+  }, 10000);
 
   return (
     <div className="container">
@@ -92,8 +98,21 @@ const AppContainer = () => {
           </button>
         </div>
       )}
-      {results.length > 0 && <Results data={...results} />}
-      {results.length <= 0 && !showUpload && <img src={loadingDNA} />}
+      {results.length > 0 && !showLoading && <Results data={...results} />}
+      {!showUpload && showLoading && (
+        <div className="loadingAnimation">
+          <motion.div
+            animate={{
+              rotate: 360,
+            }}
+            transition={{
+              duration: 1.5,
+              ease: "easeInOut",
+              loop: Infinity,
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 };
