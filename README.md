@@ -1,10 +1,10 @@
 # Nutrition SNP finder
 
-![Logo](<src/assets/favicon.png>)
+![Logo](<src/assets/dna-match-logo.png>)
 
   https://dna-match.web.app/
   
-  This app will parse your 23andme results to find SNP that are related to nutrition. 
+  This app will parse your 23andme results to find SNP that are related to nutrition.
   There are several SNPs that linked to different daily intake requirements and other variants that influence your response to food.
   If you want to optimize your health it is good to know about them!
 
@@ -30,3 +30,4 @@ npm install
 ### TODO
 
 - [ ] Add more SNPs to the list
+- [ ] Check for positive or negative DNA sense

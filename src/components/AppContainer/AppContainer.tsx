@@ -86,15 +86,15 @@ const AppContainer = () => {
                 <div {...getRootProps()}>
                   <input {...getInputProps()} />
                   <p>
-                    Drag and drop your 23andme results here. The file should be
-                    unzipped with .txt extension
+                    Drag and drop your genomic raw data here. The file should be
+                    unzipped with a .txt extension
                   </p>
                 </div>
               </section>
             )}
           </Dropzone>
           <button onClick={loadSampleFile}>
-            ... or try out with sample data
+            ... or try out with our sample data
           </button>
         </div>
       )}
