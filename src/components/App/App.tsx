@@ -21,7 +21,7 @@ const App = () => {
         </div>
         <div className="headerText2">Optimize</div>
         <div className="headerSubtitle2">
-          Modify the daily requirenment of different nutrients based on your
+          Taylor the daily requirement of different nutrients based on your
           genetic profile
         </div>
       </div>
