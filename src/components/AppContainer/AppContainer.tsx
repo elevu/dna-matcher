@@ -113,6 +113,7 @@ const AppContainer = () => {
           />
         </div>
       )}
+      {results.length === 0 && !showUpload && !showLoading && <div>No SNPs found, wrong file?</div>}
     </div>
   );
 };
