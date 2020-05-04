@@ -1,0 +1,6 @@
+.resultsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: rgb(107, 107, 107);
+}

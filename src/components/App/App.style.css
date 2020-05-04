@@ -14,7 +14,7 @@ img {
 .grids {
   display: grid;
   grid-template-columns: 40px 50px auto 50px 40px;
-  grid-template-rows: 100px 300px 55% 20px;
+  grid-template-rows: 100px 300px auto 20px;
 }
 
 .appContainer {
