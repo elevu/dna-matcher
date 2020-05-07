@@ -14,7 +14,8 @@
     // specify ECMAScript target version
     "allowJs": true,
     // allow a partial TypeScript and JavaScript codebase
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "skipLibCheck": true
   },
   "include": [
     "./src/",
