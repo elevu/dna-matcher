@@ -27,6 +27,7 @@ const AppContainer = () => {
         setResults(tempArray);
         if (allResults.length === 0 && result.data.length === 0)
           setHasNoResults(true);
+        else setShowLoading(false);
       });
     });
   };
@@ -67,7 +68,7 @@ const AppContainer = () => {
   };
 
   const loadingTime = setTimeout(() => {
-    if (results.length <= 0) setShowLoading(false);
+    if (results.length > 0 || hasNoResults) setShowLoading(false);
   }, 10000);
 
   return (
@@ -116,9 +117,7 @@ const AppContainer = () => {
           />
         </div>
       )}
-      {hasNoResults && !showLoading && (
-        <div>No SNPs found, wrong file?</div>
-      )}
+      {hasNoResults && !showLoading && <div>No SNPs found, wrong file?</div>}
     </div>
   );
 };
