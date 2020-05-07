@@ -262,42 +262,42 @@ export const SNPlist = [
     CC: {
       type: "negative",
       description:
-        "Associated with high arachidonic acid levels. Arachidonic acid is metabolized to both proinflammatory and anti-inflammatory eicosanoids during and after the inflammatory response.",
+        "Associated with high arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
     },
     CT: {
       type: "neutral",
       description:
-        "Associated with intermediate arachidonic acid levels. Arachidonic acid is metabolized to both proinflammatory and anti-inflammatory eicosanoids during and after the inflammatory response.",
+        "Associated with intermediate arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
     },
     TC: {
       type: "neutral",
       description:
-        "Associated with intermediate arachidonic acid levels. Arachidonic acid is metabolized to both proinflammatory and anti-inflammatory eicosanoids during and after the inflammatory response.",
+        "Associated with intermediate arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
     },
     TT: {
       type: "positive",
       description:
-        "Associated with low arachidonic acid levels. Arachidonic acid is metabolized to both proinflammatory and anti-inflammatory eicosanoids during and after the inflammatory response.",
+        "Associated with low arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
     },
     GG: {
       type: "negative",
       description:
-        "Associated with high arachidonic acid levels. Arachidonic acid is metabolized to both proinflammatory and anti-inflammatory eicosanoids during and after the inflammatory response.",
+        "Associated with high arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
     },
     GA: {
       type: "neutral",
       description:
-        "Associated with intermediate arachidonic acid levels. Arachidonic acid is metabolized to both proinflammatory and anti-inflammatory eicosanoids during and after the inflammatory response.",
+        "Associated with intermediate arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
     },
     AG: {
       type: "neutral",
       description:
-        "Associated with intermediate arachidonic acid levels. Arachidonic acid is metabolized to both proinflammatory and anti-inflammatory eicosanoids during and after the inflammatory response.",
+        "Associated with intermediate arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
     },
-    AA: {
+    AA:{
       type: "positive",
       description:
-        "Associated with low arachidonic acid levels. Arachidonic acid is metabolized to both proinflammatory and anti-inflammatory eicosanoids during and after the inflammatory response.",
+        "Associated with low arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
     },
     link: "https://snpedia.com/index.php/Rs174537",
   },
@@ -490,15 +490,15 @@ export const SNPlist = [
     },
     CT: {
       type: "neutral",
-      description: "Saturated fats in diet don't to higher risk of obesity",
+      description: "Saturated fats in diet don't lead to higher risk of obesity",
     },
     TC: {
       type: "neutral",
-      description: "Saturated fats in diet don't to higher risk of obesity",
+      description: "Saturated fats in diet don't lead to higher risk of obesity",
     },
     TT: {
       type: "neutral",
-      description: "Saturated fats in diet don't to higher risk of obesity",
+      description: "Saturated fats in diet don't lead to higher risk of obesity",
     },
     GG: {
       type: "negative",
