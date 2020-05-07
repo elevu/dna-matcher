@@ -13,6 +13,7 @@ const AppContainer = () => {
   const [showUpload, setShowUpload] = React.useState(true);
   const [showLoading, setShowLoading] = React.useState(true);
   const [results, setResults] = React.useState([]);
+  const [hasNoResults, setHasNoResults] = React.useState(false);
 
   const submitFile = (files) => {
     var allResults: any = [];
@@ -24,6 +25,8 @@ const AppContainer = () => {
         allResults.push(...result.data);
         let tempArray: any = [...allResults];
         setResults(tempArray);
+        if (allResults.length === 0 && result.data.length === 0)
+          setHasNoResults(true);
       });
     });
   };
@@ -113,7 +116,9 @@ const AppContainer = () => {
           />
         </div>
       )}
-      {results.length === 0 && !showUpload && !showLoading && <div>No SNPs found, wrong file?</div>}
+      {hasNoResults && !showLoading && (
+        <div>No SNPs found, wrong file?</div>
+      )}
     </div>
   );
 };
