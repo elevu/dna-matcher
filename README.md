@@ -30,4 +30,4 @@ npm install
 ### TODO
 
 - [ ] Add more SNPs to the list
-- [ ] Check for positive or negative DNA sense
+- [x] Check for positive or negative DNA sense

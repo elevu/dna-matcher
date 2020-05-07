@@ -61,19 +61,19 @@ export const SNPlist = [
   },
   {
     name: "rs1544410",
-    AA: {
+    TT: {
       type: "negative",
       description: "Increased risk of low bone mineral density disorders",
     },
-    AG: {
+    TC: {
       type: "neutral",
       description: "Intermediate risk of low bone mineral density disorders",
     },
-    GA: {
+    CT: {
       type: "neutral",
       description: "Intermediate risk of low bone mineral density disorders",
     },
-    GG: {
+    CC: {
       type: "positive",
       description: "Decreased risk of low bone mineral density disorders",
     },
@@ -259,42 +259,22 @@ export const SNPlist = [
   },
   {
     name: "rs174537",
-    CC: {
-      type: "negative",
-      description:
-        "Associated with high arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
-    },
-    CT: {
-      type: "neutral",
-      description:
-        "Associated with intermediate arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
-    },
-    TC: {
-      type: "neutral",
-      description:
-        "Associated with intermediate arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
-    },
-    TT: {
-      type: "positive",
-      description:
-        "Associated with low arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
-    },
     GG: {
       type: "negative",
       description:
         "Associated with high arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
     },
-    GA: {
+    GT: {
       type: "neutral",
       description:
         "Associated with intermediate arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
     },
-    AG: {
+    TG: {
       type: "neutral",
       description:
         "Associated with intermediate arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
     },
-    AA:{
+    TT: {
       type: "positive",
       description:
         "Associated with low arachidonic acid levels. Arachidonic acid is involved in the inflammatory response.",
@@ -307,33 +287,17 @@ export const SNPlist = [
       type: "positive",
       description: "Highest phosphatidylcholine values",
     },
-    CT: {
+    CG: {
       type: "neutral",
       description: "intermediate phosphatidylcholine values",
     },
-    TC: {
+    GC: {
       type: "neutral",
       description: "intermediate phosphatidylcholine values",
-    },
-    TT: {
-      type: "negative",
-      description: "low phosphatidylcholine values",
     },
     GG: {
-      type: "positive",
-      description: "Highest phosphatidylcholine values",
-    },
-    GA: {
-      type: "neutral",
-      description: "intermediate phosphatidylcholine values",
-    },
-    AG: {
-      type: "neutral",
-      description: "intermediate phosphatidylcholine values",
-    },
-    AA: {
       type: "negative",
-      description: "low phosphatidylcholine values",
+      description: "lowest phosphatidylcholine values",
     },
     link: "https://snpedia.com/index.php/Rs174548",
   },
